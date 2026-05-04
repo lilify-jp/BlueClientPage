@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Blue Client privacy policy." />
+<title>Privacy Policy — Blue Client</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-logo"></span>
+      <span>Blue Client</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#roadmap">Roadmap</a>
+      <a href="faq.html">FAQ</a>
+      <a href="index.html#download">Discord</a>
+    </div>
+  </div>
+</nav>
+
+<main class="doc-page">
+  <div class="doc-inner">
+    <div class="doc-head">
+      <a href="index.html" class="doc-back">← Back to home</a>
+      <h1>Privacy Policy</h1>
+      <p class="doc-meta">Effective 2026-04-18 · Private Beta</p>
+    </div>
+
+    <div class="doc-body">
+      <div class="callout">
+        <strong>Plain-language summary —</strong>
+        Blue Client stores your Microsoft login tokens on your own computer so you don't have to
+        sign in every time. It does not send gameplay telemetry, analytics, or personal data to us.
+        Beta access is tracked via Discord. Details below.
+      </div>
+
+      <h2>1. Who we are</h2>
+      <p>
+        "Blue Client" (referred to as "we", "us", "the Client") is an independent Minecraft 1.8.9
+        client in private beta. We are not affiliated with Mojang Studios or Microsoft.
+      </p>
+
+      <h2>2. Data stored on your device</h2>
+      <p>
+        The Client writes the following files to your computer. None of this leaves your machine
+        unless required by the services listed in Section 3.
+      </p>
+      <ul>
+        <li>
+          <strong>Microsoft authentication tokens</strong> (access token, refresh token, profile
+          UUID and username) in <code>%APPDATA%/UnJava/auth.json</code> or the equivalent path on
+          macOS / Linux. Used to keep you signed in to Minecraft.
+        </li>
+        <li>
+          <strong>Launcher and mod configuration</strong> (HUD positions, enabled mods, game
+          settings) in local config files.
+        </li>
+        <li>
+          <strong>Screenshots</strong> saved to a local folder when you use the screenshot feature.
+        </li>
+        <li>
+          <strong>Resource packs</strong> you install.
+        </li>
+      </ul>
+
+      <h2>3. Third-party services</h2>
+      <p>
+        The Client communicates with the following external services, controlled by their respective
+        operators under their own privacy policies.
+      </p>
+      <ul>
+        <li>
+          <strong>Microsoft authentication endpoints</strong> to sign in to your Xbox Live / Minecraft
+          account. We never see your Microsoft password.
+        </li>
+        <li>
+          <strong>Minecraft session and profile APIs</strong> (<code>sessionserver.mojang.com</code>,
+          <code>api.minecraftservices.com</code>) to authenticate server joins.
+        </li>
+        <li>
+          <strong>Minecraft servers you connect to.</strong> These see your IP address, username,
+          UUID, and in-game actions. This is the same as vanilla Minecraft.
+        </li>
+      </ul>
+
+      <h2>4. Data we collect on our side</h2>
+      <p>
+        <strong>Beta participation:</strong> To grant beta access, we associate your Discord ID with
+        an invite record. We may also store your Minecraft username / UUID when you receive a build
+        so we can recognize it in crash reports you voluntarily share.
+      </p>
+      <p>
+        <strong>No gameplay telemetry.</strong> The Client does not send tick-level, position, or
+        session data to us.
+      </p>
+      <p>
+        <strong>No analytics tracking on this website</strong> at the time of writing. If that changes
+        (e.g., for basic privacy-respecting page counts), this policy will be updated.
+      </p>
+      <p>
+        <strong>Voluntary crash reports.</strong> If the Client crashes, it may produce a local log
+        file. You decide whether to share it in the Discord. We do not auto-upload anything.
+      </p>
+
+      <h2>5. Cookies</h2>
+      <p>
+        This website does not use cookies.
+      </p>
+
+      <h2>6. Data retention</h2>
+      <p>
+        Local data on your computer stays until you delete the Client's config folder or uninstall.
+        Discord-side beta records are retained while the beta program is active and may be purged
+        at public release.
+      </p>
+
+      <h2>7. Your choices</h2>
+      <ul>
+        <li>
+          <strong>Sign out / delete local tokens</strong>: sign out in the launcher, or delete
+          <code>auth.json</code>.
+        </li>
+        <li>
+          <strong>Leave beta</strong>: leave the Discord. Your beta record will be removed on request.
+        </li>
+        <li>
+          <strong>Data deletion requests</strong>: ask in Discord (DM an admin) or via any email
+          address we announce later.
+        </li>
+      </ul>
+
+      <h2>8. Children</h2>
+      <p>
+        This beta is intended for users who can agree to Minecraft's own age requirements on their
+        own account. We don't knowingly maintain beta records for users under the applicable age of
+        consent in their country.
+      </p>
+
+      <h2>9. Security</h2>
+      <p>
+        We do our best, but no software is perfectly secure. Keep your computer and Minecraft
+        account credentials safe. If you suspect your <code>auth.json</code> was exposed, sign out
+        and revoke sessions from your Microsoft account settings.
+      </p>
+
+      <h2>10. Changes</h2>
+      <p>
+        This policy may change as the project evolves. Material changes will be announced in the
+        Discord. The "Effective" date at the top reflects the current version.
+      </p>
+
+      <h2>11. Contact</h2>
+      <p>
+        Questions about this policy go in the
+        <a href="https://discord.gg/HwTm5Jbj" target="_blank" rel="noopener">Discord</a>.
+      </p>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="nav-logo"></span>
+      <span>Blue Client</span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="faq.html">FAQ</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="https://discord.gg/HwTm5Jbj" target="_blank" rel="noopener">Discord</a>
+    </div>
+    <p class="footer-disclaimer">
+      Not affiliated with, endorsed by, or associated with Mojang Studios or Microsoft.
+      Minecraft is a trademark of Mojang Studios.
+    </p>
+    <p class="footer-copyright">
+      © 2026 Blue Client. In active development.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

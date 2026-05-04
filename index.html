@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Blue Client — a Minecraft 1.8.9 PvP client written in Rust. Early development." />
+<title>Blue Client — Minecraft 1.8.9 PvP client in Rust</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <span class="nav-logo"></span>
+      <span>Blue Client</span>
+    </a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="faq.html">FAQ</a>
+      <a href="#download">Discord</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Private Beta · Invite only
+    </div>
+    <h1 class="hero-title">
+      A Minecraft 1.8 PvP client,<br/>
+      <span class="accent">rewritten in Rust.</span>
+    </h1>
+    <p class="hero-sub">
+      No JVM. Faster startup, lower memory. Built from scratch — not a Java mod.
+    </p>
+    <div class="hero-cta">
+      <a href="https://discord.gg/HwTm5Jbj" target="_blank" rel="noopener" class="btn btn-primary">Join the Discord</a>
+      <a href="#features" class="btn btn-ghost">See what works →</a>
+    </div>
+    <p class="hero-note">
+      Windows · macOS · Linux &nbsp;·&nbsp; Minecraft 1.8.9 (protocol 47) &nbsp;·&nbsp; Multiplayer only
+    </p>
+  </div>
+  <div class="hero-bg"></div>
+</header>
+
+<section class="status-banner">
+  <div class="status-inner">
+    <strong>Private Beta —</strong> this client is in closed testing. Access is invite-only while we stabilize the core. Many features are planned but not yet built. If you're looking for a polished, feature-complete client today, come back later.
+  </div>
+</section>
+
+<section id="features" class="section">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-label">Implemented</span>
+      <h2>What works today</h2>
+      <p class="section-desc">
+        Everything below is running right now. The list is short — we're being honest.
+      </p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Online login</h3>
+        <p>Microsoft account authentication via Device Code Flow. No offline-only accounts.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Multiplayer ready</h3>
+        <p>Connects to any vanilla-compatible 1.8.9 server. AES/CFB8 encryption + zlib compression.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Native performance</h3>
+        <p>No JVM. Rust + wgpu rendering, tokio networking. Faster boot, lower RAM than Java clients.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Custom launcher</h3>
+        <p>Tauri-based cross-platform launcher. Account management and version selection.</p>
+      </div>
+      <div class="feature-card">
+        <h3>HUD editor</h3>
+        <p>Drag-to-place HUD elements. Positions saved per profile.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Resource packs</h3>
+        <p>Standard 1.8.9 resource packs work. Apply and manage from the in-game menu.</p>
+      </div>
+    </div>
+
+    <h3 class="mods-head">Working mods</h3>
+    <div class="chip-list">
+      <span class="chip">Hit Color</span>
+      <span class="chip">Toggle Sprint</span>
+      <span class="chip">Zoom</span>
+      <span class="chip">FPS Display</span>
+      <span class="chip">CPS Counter</span>
+      <span class="chip">Scoreboard</span>
+      <span class="chip">Fullbright</span>
+      <span class="chip">Low Fire</span>
+      <span class="chip">No Hurt Camera</span>
+      <span class="chip">Ping Display</span>
+      <span class="chip">Coordinates</span>
+      <span class="chip">Time Changer</span>
+      <span class="chip">Motion Blur</span>
+      <span class="chip">Screenshot Manager</span>
+    </div>
+    <p class="progress-note">
+      <strong>14</strong> of <strong>~150</strong> planned mods implemented.
+    </p>
+  </div>
+</section>
+
+<section id="roadmap" class="section section-alt">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-label">Planned</span>
+      <h2>What's coming</h2>
+      <p class="section-desc">
+        These are on the roadmap. None of the items below work yet. We're showing them so you know where the project is heading.
+      </p>
+    </div>
+
+    <div class="roadmap">
+      <div class="roadmap-col">
+        <h3>Combat</h3>
+        <ul>
+          <li>Combo Counter</li>
+          <li>Target HUD</li>
+          <li>Reach Display</li>
+          <li>Damage Indicator</li>
+          <li>Session Stats (K/D)</li>
+          <li>Pearl / Gap cooldown</li>
+          <li>Bow Charge</li>
+          <li>W-Tap Indicator</li>
+          <li>Hit Delay Display</li>
+        </ul>
+      </div>
+      <div class="roadmap-col">
+        <h3>Movement</h3>
+        <ul>
+          <li>Toggle Sneak</li>
+          <li>Sprint Indicator</li>
+          <li>Perspective (360°)</li>
+          <li>Custom FOV</li>
+        </ul>
+        <h3>HUD</h3>
+        <ul>
+          <li>Keystrokes (WASD)</li>
+          <li>Armor Status</li>
+          <li>Potion Status</li>
+          <li>Durability</li>
+          <li>Waypoints</li>
+          <li>Mini Inventory</li>
+        </ul>
+      </div>
+      <div class="roadmap-col">
+        <h3>Render</h3>
+        <ul>
+          <li>Custom Crosshair</li>
+          <li>1.7 Animations</li>
+          <li>Custom Sky</li>
+          <li>Chunk Animator</li>
+          <li>Player Outline</li>
+          <li>Sword Trail</li>
+          <li>Hit Particles</li>
+          <li>Enchant Glow</li>
+        </ul>
+      </div>
+      <div class="roadmap-col">
+        <h3>Chat / Misc</h3>
+        <ul>
+          <li>Chat Filter</li>
+          <li>Auto Reconnect</li>
+          <li>Server Switcher</li>
+          <li>Discord RPC</li>
+          <li>Config Profiles</li>
+          <li>Volume Mixer</li>
+          <li>Notifications</li>
+        </ul>
+        <h3>Cosmetics</h3>
+        <ul>
+          <li>Capes</li>
+          <li>Wings</li>
+          <li>Particle Aura</li>
+          <li>Nametag styles</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why-rust" class="section">
+  <div class="section-inner">
+    <div class="split">
+      <div class="split-text">
+        <span class="section-label">Technical angle</span>
+        <h2>Why rewrite in Rust?</h2>
+        <p>
+          Most 1.8 custom clients are Java mods loaded on top of the original jar. That means
+          a JVM, mod-loader overhead, and inherited memory footprint.
+        </p>
+        <p>
+          This client ships a Rust engine instead — rendering, physics, networking, protocol, all
+          rewritten from scratch. The payoff is lower memory use and faster cold start. The cost
+          is everything has to be reimplemented one method at a time.
+        </p>
+        <p>
+          That's why the beta is closed and the feature list is short. It's also why each feature
+          that ships is native, not emulated.
+        </p>
+      </div>
+      <div class="split-visual">
+        <div class="tech-block">
+          <div class="tech-row"><span>Rendering</span><span class="tech-tag">wgpu</span></div>
+          <div class="tech-row"><span>Networking</span><span class="tech-tag">tokio</span></div>
+          <div class="tech-row"><span>Physics</span><span class="tech-tag">Vanilla 1.8 (translated)</span></div>
+          <div class="tech-row"><span>Launcher</span><span class="tech-tag">Tauri</span></div>
+          <div class="tech-row"><span>Protocol</span><span class="tech-tag">47 (1.8.9)</span></div>
+          <div class="tech-row"><span>Runtime</span><span class="tech-tag">Native · no JVM</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="known-issues" class="section section-alt">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-label">Transparency</span>
+      <h2>Known issues</h2>
+      <p class="section-desc">
+        We're keeping this page honest. Here's what's broken right now.
+      </p>
+    </div>
+
+    <div class="issue-list">
+      <div class="issue">
+        <div class="issue-tag issue-tag-warn">Anti-cheat</div>
+        <div>
+          <h4>Grim AC flags during PvP block-hit</h4>
+          <p>
+            Vanilla-physics-equivalent client movement still produces Simulation flags on
+            strict Grim servers during sprint toggles, W-tap, and sword-block PvP. Root cause
+            unidentified. If your server runs Grim with tight thresholds, expect false positives.
+            Zombie/mob combat is unaffected.
+          </p>
+        </div>
+      </div>
+
+      <div class="issue">
+        <div class="issue-tag issue-tag-info">Scope</div>
+        <div>
+          <h4>No single-player</h4>
+          <p>
+            There's no world generation, no integrated server, no local save. Multiplayer only.
+            This is a scope decision, not a bug — the client is aimed at servers.
+          </p>
+        </div>
+      </div>
+
+      <div class="issue">
+        <div class="issue-tag issue-tag-warn">Incomplete</div>
+        <div>
+          <h4>Rendering gaps</h4>
+          <p>
+            Some visuals are missing or placeholder: water flow direction, signs text rendering,
+            banner patterns, piston animation, a few entity models. Functional but rough.
+          </p>
+        </div>
+      </div>
+
+      <div class="issue">
+        <div class="issue-tag issue-tag-info">Mods</div>
+        <div>
+          <h4>Most listed mods aren't implemented</h4>
+          <p>
+            The roadmap section is aspirational. Today there are 14 working mods out of ~150
+            planned. We'll ship more over time, but don't install expecting Lunar/Badlion parity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="download" class="section cta-section">
+  <div class="section-inner">
+    <div class="cta-single">
+      <div class="cta-single-icon">◆</div>
+      <h2>Everything happens on Discord</h2>
+      <p class="cta-sub">
+        Beta invites, builds, updates, support, feedback — all in one place.
+        Join us to request access and follow development.
+      </p>
+      <a href="https://discord.gg/HwTm5Jbj" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Join the Discord</a>
+      <p class="cta-hint">discord.gg/HwTm5Jbj</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="nav-logo"></span>
+      <span>Blue Client</span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="faq.html">FAQ</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="https://discord.gg/HwTm5Jbj" target="_blank" rel="noopener">Discord</a>
+    </div>
+    <p class="footer-disclaimer">
+      Not affiliated with, endorsed by, or associated with Mojang Studios or Microsoft.
+      Minecraft is a trademark of Mojang Studios.
+    </p>
+    <p class="footer-copyright">
+      © 2026 Blue Client. In active development.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
