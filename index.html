@@ -36,6 +36,7 @@
     </h1>
     <p class="hero-sub">
       No JVM. Faster startup, lower memory. Built from scratch — not a Java mod.
+      ~120 mods working, drag-to-edit HUD, cosmetics, Microsoft login.
     </p>
     <div class="hero-cta">
       <a href="https://discord.gg/HwTm5Jbj" target="_blank" rel="noopener" class="btn btn-primary">Join the Discord</a>
@@ -83,11 +84,19 @@
       </div>
       <div class="feature-card">
         <h3>HUD editor</h3>
-        <p>Drag-to-place HUD elements. Positions saved per profile.</p>
+        <p>Drag-to-place editor with ~50 movable elements. Positions persist across toggles and save automatically.</p>
       </div>
       <div class="feature-card">
         <h3>Resource packs</h3>
         <p>Standard 1.8.9 resource packs work. Apply and manage from the in-game menu.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Lean menu memory</h3>
+        <p>Game-only GPU resources (atlas upload, entity skins, baked models) are deferred until you actually join a world.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Cosmetics</h3>
+        <p>Capes, wings, particle auras, nametag styles, hat / crown / badge overlays. All applied client-side.</p>
       </div>
     </div>
 
@@ -95,21 +104,136 @@
     <div class="chip-list">
       <span class="chip">Hit Color</span>
       <span class="chip">Toggle Sprint</span>
+      <span class="chip">Toggle Sneak</span>
+      <span class="chip">Sprint Indicator</span>
+      <span class="chip">W-Tap Indicator</span>
       <span class="chip">Zoom</span>
+      <span class="chip">Custom FOV</span>
+      <span class="chip">Perspective</span>
       <span class="chip">FPS Display</span>
-      <span class="chip">CPS Counter</span>
+      <span class="chip">FPS Graph</span>
+      <span class="chip">CPS Display</span>
+      <span class="chip">Ping Display</span>
+      <span class="chip">Ping Graph</span>
+      <span class="chip">Memory Display</span>
+      <span class="chip">Packet Display</span>
+      <span class="chip">Reach Display</span>
+      <span class="chip">Hit Delay Display</span>
+      <span class="chip">Speed Display</span>
+      <span class="chip">Sensitivity Display</span>
+      <span class="chip">KB Display</span>
+      <span class="chip">Combo Counter</span>
+      <span class="chip">Critical Counter</span>
+      <span class="chip">Kill Streak</span>
+      <span class="chip">Session Stats</span>
+      <span class="chip">Target HUD</span>
+      <span class="chip">Damage Indicator</span>
+      <span class="chip">Hit Splat</span>
+      <span class="chip">Hit Particles</span>
+      <span class="chip">Crit Particles</span>
+      <span class="chip">Blood Particles</span>
+      <span class="chip">Sword Trail</span>
+      <span class="chip">1.7 Animations</span>
+      <span class="chip">1.7 Hit Sounds</span>
+      <span class="chip">Bow Charge</span>
+      <span class="chip">Pearl Cooldown</span>
+      <span class="chip">Gap Cooldown</span>
+      <span class="chip">Rod Cooldown</span>
+      <span class="chip">Blocking Indicator</span>
+      <span class="chip">Enemy Armor</span>
+      <span class="chip">Enemy Potions</span>
+      <span class="chip">Armor Status</span>
+      <span class="chip">Potion Status</span>
+      <span class="chip">Effect Display</span>
+      <span class="chip">Durability</span>
+      <span class="chip">Arrow Count</span>
+      <span class="chip">Hotbar</span>
+      <span class="chip">XP Bar</span>
+      <span class="chip">Boss Bar</span>
+      <span class="chip">Action Bar</span>
+      <span class="chip">Tab List</span>
+      <span class="chip">Health Display</span>
+      <span class="chip">Hunger Display</span>
+      <span class="chip">Absorption</span>
+      <span class="chip">Fall Distance</span>
+      <span class="chip">Void Distance</span>
+      <span class="chip">Keystrokes</span>
+      <span class="chip">Inventory HUD</span>
+      <span class="chip">Mini Map / Waypoints</span>
+      <span class="chip">Death Waypoint</span>
+      <span class="chip">Coordinates</span>
+      <span class="chip">Direction HUD</span>
+      <span class="chip">Compass HUD</span>
+      <span class="chip">Biome Display</span>
+      <span class="chip">Clock</span>
+      <span class="chip">Stopwatch</span>
+      <span class="chip">Game Mode</span>
+      <span class="chip">Server IP</span>
+      <span class="chip">Player Count</span>
       <span class="chip">Scoreboard</span>
+      <span class="chip">Crosshair</span>
       <span class="chip">Fullbright</span>
       <span class="chip">Low Fire</span>
       <span class="chip">No Hurt Camera</span>
-      <span class="chip">Ping Display</span>
-      <span class="chip">Coordinates</span>
-      <span class="chip">Time Changer</span>
+      <span class="chip">Damage Tilt</span>
+      <span class="chip">Bobbing</span>
       <span class="chip">Motion Blur</span>
-      <span class="chip">Screenshot Manager</span>
+      <span class="chip">I-Frame Flash</span>
+      <span class="chip">Invincibility Timer</span>
+      <span class="chip">Block Overlay</span>
+      <span class="chip">Water Overlay</span>
+      <span class="chip">Lava Overlay</span>
+      <span class="chip">Custom Sky</span>
+      <span class="chip">Cloud Toggle</span>
+      <span class="chip">Fog Customizer</span>
+      <span class="chip">Time Changer</span>
+      <span class="chip">Weather Changer</span>
+      <span class="chip">Pumpkin Remover</span>
+      <span class="chip">Block Break FX</span>
+      <span class="chip">Explosion FX</span>
+      <span class="chip">Death Animation</span>
+      <span class="chip">Death Particles</span>
+      <span class="chip">Win Effect</span>
+      <span class="chip">Kill Effect</span>
+      <span class="chip">Item Physics</span>
+      <span class="chip">Chat</span>
+      <span class="chip">Chat Filter</span>
+      <span class="chip">Spam Filter</span>
+      <span class="chip">Chat Timestamp</span>
+      <span class="chip">Mention Highlight</span>
+      <span class="chip">Copy Chat</span>
+      <span class="chip">Auto Chat</span>
+      <span class="chip">Auto GG</span>
+      <span class="chip">Auto Reconnect</span>
+      <span class="chip">Auto Respawn</span>
+      <span class="chip">Auto Screenshot</span>
+      <span class="chip">Server Switcher</span>
+      <span class="chip">Server History</span>
+      <span class="chip">Quick Toggle</span>
+      <span class="chip">Config Profiles</span>
+      <span class="chip">Volume Mixer</span>
+      <span class="chip">Notifications</span>
+      <span class="chip">Stream Mode</span>
+      <span class="chip">Nick Hider</span>
+      <span class="chip">Custom Death Sound</span>
+      <span class="chip">Custom Kill Sound</span>
+      <span class="chip">Last Hit</span>
+      <span class="chip">Hit Rate</span>
+      <span class="chip">Name Tags</span>
+      <span class="chip">Nametag Style</span>
+      <span class="chip">Clan Tag</span>
+      <span class="chip">Custom Rank</span>
+      <span class="chip">Custom Flag</span>
+      <span class="chip">Cape</span>
+      <span class="chip">Hat</span>
+      <span class="chip">Crown</span>
+      <span class="chip">Badge</span>
+      <span class="chip">Wings</span>
+      <span class="chip">Particle Aura</span>
+      <span class="chip">Discord RPC</span>
     </div>
     <p class="progress-note">
-      <strong>14</strong> of <strong>~150</strong> planned mods implemented.
+      <strong>~120</strong> of <strong>~150</strong> planned mods implemented.
     </p>
   </div>
 </section>
@@ -126,67 +250,41 @@
 
     <div class="roadmap">
       <div class="roadmap-col">
-        <h3>Combat</h3>
+        <h3>Anti-cheat compatibility</h3>
         <ul>
-          <li>Combo Counter</li>
-          <li>Target HUD</li>
-          <li>Reach Display</li>
-          <li>Damage Indicator</li>
-          <li>Session Stats (K/D)</li>
-          <li>Pearl / Gap cooldown</li>
-          <li>Bow Charge</li>
-          <li>W-Tap Indicator</li>
-          <li>Hit Delay Display</li>
+          <li>Grim Simulation flag — root cause</li>
+          <li>Strict-server PvP verification</li>
+          <li>Tickrate / Timer stability pass</li>
         </ul>
       </div>
       <div class="roadmap-col">
-        <h3>Movement</h3>
+        <h3>Render polish</h3>
         <ul>
-          <li>Toggle Sneak</li>
-          <li>Sprint Indicator</li>
-          <li>Perspective (360°)</li>
-          <li>Custom FOV</li>
-        </ul>
-        <h3>HUD</h3>
-        <ul>
-          <li>Keystrokes (WASD)</li>
-          <li>Armor Status</li>
-          <li>Potion Status</li>
-          <li>Durability</li>
-          <li>Waypoints</li>
-          <li>Mini Inventory</li>
-        </ul>
-      </div>
-      <div class="roadmap-col">
-        <h3>Render</h3>
-        <ul>
-          <li>Custom Crosshair</li>
-          <li>1.7 Animations</li>
-          <li>Custom Sky</li>
           <li>Chunk Animator</li>
           <li>Player Outline</li>
-          <li>Sword Trail</li>
-          <li>Hit Particles</li>
-          <li>Enchant Glow</li>
+          <li>Enchant Glow effect</li>
+          <li>Water flow direction</li>
+          <li>Sign text rendering</li>
+          <li>Banner patterns</li>
+          <li>Piston animation</li>
         </ul>
       </div>
       <div class="roadmap-col">
-        <h3>Chat / Misc</h3>
+        <h3>Engine</h3>
         <ul>
-          <li>Chat Filter</li>
-          <li>Auto Reconnect</li>
-          <li>Server Switcher</li>
-          <li>Discord RPC</li>
-          <li>Config Profiles</li>
-          <li>Volume Mixer</li>
-          <li>Notifications</li>
+          <li>Sodium-style chunk batching</li>
+          <li>Frame-pacing fixes (stutter)</li>
+          <li>Optifine-equivalent shaders</li>
+          <li>Custom Crosshair editor</li>
         </ul>
-        <h3>Cosmetics</h3>
+      </div>
+      <div class="roadmap-col">
+        <h3>Scope</h3>
         <ul>
-          <li>Capes</li>
-          <li>Wings</li>
-          <li>Particle Aura</li>
-          <li>Nametag styles</li>
+          <li>Single-player worlds</li>
+          <li>World generation</li>
+          <li>Integrated server</li>
+          <li>Mod / extension API</li>
         </ul>
       </div>
     </div>
@@ -209,8 +307,8 @@
           is everything has to be reimplemented one method at a time.
         </p>
         <p>
-          That's why the beta is closed and the feature list is short. It's also why each feature
-          that ships is native, not emulated.
+          That's why the beta is closed. Around 120 mods are working today; each one is native
+          Rust, not an emulation layer on top of a Java mod.
         </p>
       </div>
       <div class="split-visual">
@@ -241,12 +339,13 @@
       <div class="issue">
         <div class="issue-tag issue-tag-warn">Anti-cheat</div>
         <div>
-          <h4>Grim AC flags during PvP block-hit</h4>
+          <h4>Grim AC Simulation flag — still under investigation</h4>
           <p>
-            Vanilla-physics-equivalent client movement still produces Simulation flags on
-            strict Grim servers during sprint toggles, W-tap, and sword-block PvP. Root cause
-            unidentified. If your server runs Grim with tight thresholds, expect false positives.
-            Zombie/mob combat is unaffected.
+            On strict Grim servers, the Simulation check fires during sword block-hit cycles
+            and occasionally during slow approach attacks near max reach. Every physics path
+            we can identify has been audited line-by-line against vanilla 1.8.9, but the root
+            cause is still open. Mob PvE is unaffected. If your server runs Grim with tight
+            thresholds, expect false positives.
           </p>
         </div>
       </div>
@@ -254,10 +353,10 @@
       <div class="issue">
         <div class="issue-tag issue-tag-info">Scope</div>
         <div>
-          <h4>No single-player</h4>
+          <h4>Multiplayer only</h4>
           <p>
-            There's no world generation, no integrated server, no local save. Multiplayer only.
-            This is a scope decision, not a bug — the client is aimed at servers.
+            No world generation, no integrated server, no save files. The client is aimed at
+            servers — single-player support is a possible future direction, not a near-term goal.
           </p>
         </div>
       </div>
@@ -267,19 +366,20 @@
         <div>
           <h4>Rendering gaps</h4>
           <p>
-            Some visuals are missing or placeholder: water flow direction, signs text rendering,
-            banner patterns, piston animation, a few entity models. Functional but rough.
+            A few visuals remain placeholder or missing: water flow direction, sign text,
+            banner patterns, piston animation, a handful of entity models. Functional but rough.
           </p>
         </div>
       </div>
 
       <div class="issue">
-        <div class="issue-tag issue-tag-info">Mods</div>
+        <div class="issue-tag issue-tag-warn">Performance</div>
         <div>
-          <h4>Most listed mods aren't implemented</h4>
+          <h4>FPS variance during heavy frames</h4>
           <p>
-            The roadmap section is aspirational. Today there are 14 working mods out of ~150
-            planned. We'll ship more over time, but don't install expecting Lunar/Badlion parity.
+            Frame times can swing between ~300 and ~700 FPS on identical scenes depending on
+            GPU scheduling and chunk-mesh work bursts. No Sodium-equivalent batching yet.
+            We're working on it.
           </p>
         </div>
       </div>
