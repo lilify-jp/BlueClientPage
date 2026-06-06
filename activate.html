@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Thanks for purchasing Blue Public Lifetime Beta Access. Activate your Beta Access role in three steps." />
+<meta name="robots" content="noindex" />
+<title>Welcome — Activate Your Blue Public Beta Access</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+  .steps {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+  .steps > li {
+    counter-increment: step;
+    position: relative;
+    padding: 1.1rem 1.25rem 1.1rem 3.5rem;
+    margin-bottom: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+  }
+  .steps > li::before {
+    content: counter(step);
+    position: absolute;
+    left: 1rem;
+    top: 1.1rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    line-height: 1.75rem;
+    text-align: center;
+    border-radius: 50%;
+    background: var(--accent, #5b8cff);
+    color: #fff;
+    font-weight: 600;
+  }
+  .steps h3 {
+    margin: 0 0 0.4rem 0;
+    font-size: 1.05em;
+  }
+  .steps p {
+    margin: 0.25rem 0 0 0;
+  }
+  .code-sample {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.95em;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-logo"></span>
+      <span>Blue Client</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#roadmap">Roadmap</a>
+      <a href="faq.html">FAQ</a>
+      <a href="index.html#download">Discord</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Purchase confirmed
+    </div>
+    <h1 class="hero-title">
+      Thanks for joining Blue Public.<br/>
+      <span class="accent">Let's get you activated.</span>
+    </h1>
+    <p class="hero-sub">
+      Your Lifetime Beta Access purchase has been processed by Ko-fi. The redemption
+      code is on its way to the email address you used at checkout. Follow the three
+      steps below to claim your Beta Access role on Discord.
+    </p>
+  </div>
+  <div class="hero-bg"></div>
+</header>
+
+<section class="section">
+  <div class="section-inner">
+
+    <div class="section-head">
+      <span class="section-label">Step-by-step</span>
+      <h2>Activate in 3 steps</h2>
+      <p class="section-desc">
+        Most buyers are done in under two minutes. Open the email, join Discord, paste
+        the code — that's the whole flow.
+      </p>
+    </div>
+
+    <ol class="steps">
+
+      <li>
+        <h3>Check your inbox for the redemption code</h3>
+        <p>
+          The email subject is <strong>"Your Blue Public redemption code"</strong>. It
+          contains a single code in the format
+          <span class="code-sample">BLUE-XXXX-XXXX-XXXX</span> (four-character groups,
+          12 characters total). If you don't see it within a minute or two, check your
+          spam / promotions folder — the email is sent through Resend and occasionally
+          gets filtered.
+        </p>
+      </li>
+
+      <li>
+        <h3>Join the Blue Public Discord</h3>
+        <p>
+          The Beta Access role lives on Discord — you'll need to be in the server before
+          the bot can grant it.
+        </p>
+        <p style="margin-top: 0.85rem;">
+          <a href="https://discord.gg/uE3G4r2VE8" target="_blank" rel="noopener" class="btn btn-primary">
+            Join the Discord
+          </a>
+        </p>
+      </li>
+
+      <li>
+        <h3>Run <span class="code-sample">/redeem &lt;your code&gt;</span> in any channel</h3>
+        <p>
+          Type <span class="code-sample">/redeem</span> in any text channel, then paste
+          the code from your email. The reply is ephemeral — only you can see it, so the
+          code never leaks publicly.
+        </p>
+        <p style="margin-top: 0.5rem;">
+          On success: the <strong>Beta Access</strong> role is added to your account
+          instantly, and the <strong>#beta-downloads</strong> channel unlocks. Grab the
+          latest build from there.
+        </p>
+      </li>
+
+    </ol>
+
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="section-inner">
+
+    <div class="section-head">
+      <span class="section-label">Heads-up</span>
+      <h2>Did you link Discord at checkout?</h2>
+    </div>
+
+    <div class="callout">
+      <strong>Auto-grant path —</strong> Ko-fi lets you connect your Discord account
+      during checkout. If you did, the Beta Access role is granted to you automatically
+      the moment the purchase clears, before the email even lands. You'll still receive
+      the redemption code by email; keep it. It's the only way to transfer the
+      entitlement to a different Discord account later if you ever need to.
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+
+    <div class="section-head">
+      <span class="section-label">Troubleshooting</span>
+      <h2>If something doesn't work</h2>
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="feature-card">
+        <h3>No email after 10 minutes</h3>
+        <p>
+          Check spam / promotions, then search your inbox for "Blue Public". If still
+          missing, open a ticket in <strong>#beta-redeem</strong> on Discord with the
+          email address you used at Ko-fi checkout — an admin will reissue the code.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>"That code is not valid"</h3>
+        <p>
+          Double-check that you copied all four groups (12 characters) without
+          surrounding spaces, and that the prefix <span class="code-sample">BLUE-</span>
+          is included. Codes are case-insensitive but hyphens are required.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>"That code has already been redeemed"</h3>
+        <p>
+          Each code can be used exactly once. If you've redeemed and lost access (e.g.
+          you left the Discord), open a ticket in <strong>#beta-redeem</strong> with
+          your Ko-fi order ID — we can re-grant the role without minting a new code.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>"Redemption is temporarily unavailable"</h3>
+        <p>
+          The license server is briefly unreachable. Wait a minute and try again. If it
+          persists for more than 10 minutes, ping a staff member on Discord.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>I lost the email and the order ID</h3>
+        <p>
+          Ko-fi keeps a copy of every purchase under your account. Sign in at
+          <a href="https://ko-fi.com" target="_blank" rel="noopener">ko-fi.com</a>,
+          open your purchase history, and the order details will be there.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>I want a refund</h3>
+        <p>
+          See the refund policy in the
+          <a href="terms.html#refund">EULA, section 4</a>. Lifetime Beta Access is
+          non-refundable except as required by law, with a defined carve-out for
+          documented technical defects. Refund requests go in
+          <strong>#beta-redeem</strong>.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-label">Quick reference</span>
+      <h2>Need to read the fine print?</h2>
+    </div>
+
+    <ul>
+      <li><a href="terms.html">End-User Licence Agreement</a> — what you can and can't do with the client; refund policy; termination terms.</li>
+      <li><a href="privacy.html">Privacy Policy</a> — what data we collect, where it goes, your rights.</li>
+      <li><a href="faq.html">FAQ</a> — general questions about the project.</li>
+    </ul>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="nav-logo"></span>
+      <span>Blue Client</span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="faq.html">FAQ</a>
+      <a href="activate.html">Activate</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="https://discord.gg/uE3G4r2VE8" target="_blank" rel="noopener">Discord</a>
+    </div>
+    <p class="footer-disclaimer">
+      Not affiliated with, endorsed by, or associated with Mojang Studios or Microsoft.
+      Minecraft is a trademark of Mojang Studios.
+    </p>
+    <p class="footer-copyright">
+      © 2026 Blue Client. In active development.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -125,7 +125,7 @@
         </thead>
         <tbody>
           <tr><td>Discord user ID</td><td>Discord OAuth</td><td>Match the entitlement to your account</td></tr>
-          <tr><td>Storefront order reference</td><td>BOOTH / Gumroad / future</td><td>Audit trail, refund verification</td></tr>
+          <tr><td>Storefront order reference</td><td>Ko-fi</td><td>Audit trail, refund verification</td></tr>
           <tr><td>SKU</td><td>Our catalogue</td><td>Identify what you bought</td></tr>
           <tr><td>Granted-at timestamp</td><td>Server clock</td><td>Audit trail</td></tr>
           <tr><td>Optional <code>expires_at</code></td><td>Subscription endpoint</td><td>Subscription cycle (if applicable)</td></tr>
@@ -147,8 +147,7 @@
         </thead>
         <tbody>
           <tr><td>Discord</td><td>OAuth identification + role lookups</td><td><a href="https://discord.com/privacy" target="_blank" rel="noopener">discord.com/privacy</a></td></tr>
-          <tr><td>BOOTH (PIXIV Inc.)</td><td>Payment for Lifetime Beta Access / cosmetics</td><td><a href="https://booth.pm/privacy" target="_blank" rel="noopener">booth.pm/privacy</a></td></tr>
-          <tr><td>Gumroad</td><td>Payment for Lifetime Beta Access / cosmetics</td><td><a href="https://gumroad.com/privacy" target="_blank" rel="noopener">gumroad.com/privacy</a></td></tr>
+          <tr><td>Ko-fi (Ko-Fi Labs Limited)</td><td>Payment for Lifetime Beta Access / cosmetics</td><td><a href="https://more.ko-fi.com/privacy" target="_blank" rel="noopener">more.ko-fi.com/privacy</a></td></tr>
           <tr><td>Sentry</td><td>Crash events (only if <code>SENTRY_DSN</code> is set)</td><td><a href="https://sentry.io/privacy" target="_blank" rel="noopener">sentry.io/privacy</a></td></tr>
           <tr><td>Microsoft</td><td>Game account authentication</td><td><a href="https://privacy.microsoft.com/" target="_blank" rel="noopener">privacy.microsoft.com</a></td></tr>
         </tbody>
@@ -205,9 +204,10 @@
         <li>The licence service runs on a single VPS we operate. Data does not leave that VPS
           except in encrypted backups under our control.</li>
         <li>Sentry crash events go to the Sentry instance configured at build time.</li>
-        <li>Storefront purchase data sits at the storefront (BOOTH or Gumroad). We receive a
-          webhook with the order reference and the buyer's Discord identifier; we do not pull
-          additional fields from the storefront unless required to verify a refund.</li>
+        <li>Storefront purchase data sits at the storefront (Ko-fi). We receive a webhook
+          with the order reference and the buyer's Discord identifier (if linked at checkout);
+          we do not pull additional fields from the storefront unless required to verify a
+          refund.</li>
         <li>We do <strong>not</strong> sell or share your data with advertisers, data brokers, or
           any third party for marketing purposes.</li>
       </ul>
