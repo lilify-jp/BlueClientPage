@@ -3,9 +3,28 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Blue Client privacy policy." />
-<title>Privacy Policy — Blue Client</title>
+<meta name="description" content="Blue Public Privacy Policy." />
+<title>Privacy Policy — Blue Public</title>
 <link rel="stylesheet" href="style.css" />
+<style>
+  .doc-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0;
+    font-size: 0.95em;
+  }
+  .doc-body th,
+  .doc-body td {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 0.55rem 0.75rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  .doc-body th {
+    background: rgba(255, 255, 255, 0.04);
+    font-weight: 600;
+  }
+</style>
 </head>
 <body>
 
@@ -28,137 +47,224 @@
   <div class="doc-inner">
     <div class="doc-head">
       <a href="index.html" class="doc-back">← Back to home</a>
-      <h1>Privacy Policy</h1>
-      <p class="doc-meta">Effective 2026-04-18 · Private Beta</p>
+      <h1>Blue Public — Privacy Policy</h1>
+      <p class="doc-meta">Version 2026-05-10 · Effective 2026-05-10</p>
     </div>
 
     <div class="doc-body">
       <div class="callout">
-        <strong>Plain-language summary —</strong>
-        Blue Client stores your Microsoft login tokens on your own computer so you don't have to
-        sign in every time. It does not send gameplay telemetry, analytics, or personal data to us.
-        Beta access is tracked via Discord. Details below.
+        This document tells you, plainly, what data the Blue Public client and its associated
+        services collect, why we collect it, where it goes, and how to ask us to delete it.
+        <br/><br/>
+        This policy is not a substitute for legal advice. If you have specific compliance
+        obligations (GDPR, CCPA, APPI, etc.) you are responsible for reviewing this document
+        against them before deciding whether to use the Software or purchase any tier or
+        cosmetic.
       </div>
 
       <h2>1. Who we are</h2>
       <p>
-        "Blue Client" (referred to as "we", "us", "the Client") is an independent Minecraft 1.8.9
-        client in private beta. We are not affiliated with Mojang Studios or Microsoft.
+        The Blue Public project ("we"). Contact: the project's
+        <a href="https://discord.gg/uE3G4r2VE8" target="_blank" rel="noopener">Discord server</a>.
+      </p>
+      <p>
+        We are not a registered legal entity. There is no commercial product behind the Software
+        in the corporate-veil sense, but we do accept payment for tiers and cosmetics; payment
+        processing is handled entirely by the third-party storefronts listed in section 5.
       </p>
 
-      <h2>2. Data stored on your device</h2>
+      <h2>2. What data the client collects</h2>
       <p>
-        The Client writes the following files to your computer. None of this leaves your machine
-        unless required by the services listed in Section 3.
+        When you run the Blue Public client, it processes the following data
+        <strong>locally on your machine</strong>:
       </p>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Source</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Minecraft username</td><td>Microsoft account auth</td><td>Display name, multiplayer connect</td></tr>
+          <tr><td>Microsoft account UUID</td><td>Microsoft account auth</td><td>Multiplayer auth</td></tr>
+          <tr><td>Microsoft access token</td><td>Microsoft account auth</td><td>Multiplayer auth (held in memory)</td></tr>
+          <tr><td>Hardware fingerprint hash</td><td>Computed from machine-id + MAC + home-directory path</td><td>Bind licence token to this machine</td></tr>
+          <tr><td>Settings file</td><td>Your edits</td><td>Persist game preferences</td></tr>
+          <tr><td>Local game logs</td><td>The client</td><td>Diagnostic logs for bug reports</td></tr>
+          <tr><td>Crash dumps (optional)</td><td>Sentry SDK, if <code>SENTRY_DSN</code> is configured</td><td>Crash diagnostics</td></tr>
+        </tbody>
+      </table>
+      <p>
+        The Microsoft access token never leaves your machine except to talk to Microsoft and to
+        the Minecraft server you join. The hardware fingerprint hash is sent only to our
+        licence-authority service, only as a SHA-256 hash, and only during licence checks.
+      </p>
+
+      <h2>3. What our licence-authority service collects</h2>
+      <p>When you authenticate against the licence service, we record:</p>
       <ul>
-        <li>
-          <strong>Microsoft authentication tokens</strong> (access token, refresh token, profile
-          UUID and username) in <code>%APPDATA%/UnJava/auth.json</code> or the equivalent path on
-          macOS / Linux. Used to keep you signed in to Minecraft.
-        </li>
-        <li>
-          <strong>Launcher and mod configuration</strong> (HUD positions, enabled mods, game
-          settings) in local config files.
-        </li>
-        <li>
-          <strong>Screenshots</strong> saved to a local folder when you use the screenshot feature.
-        </li>
-        <li>
-          <strong>Resource packs</strong> you install.
-        </li>
+        <li>The hash of your hardware fingerprint (never the raw value).</li>
+        <li>The user identifier returned by the upstream auth provider (Discord ID, or a
+          synthetic dummy identifier in development).</li>
+        <li>The IP address you connect from, for the duration of session validation, plus a
+          trailing five-minute window for rate-limit accounting.</li>
+        <li>A randomly generated session identifier and (after success) a JWT identifier.</li>
+        <li>The issuance and expiry timestamps of the JWT.</li>
+      </ul>
+      <p>We do <strong>not</strong> store:</p>
+      <ul>
+        <li>Your Microsoft account.</li>
+        <li>Your Minecraft username.</li>
+        <li>The contents of any chat, in-game action, or world data.</li>
+        <li>The raw hardware fingerprint string.</li>
       </ul>
 
-      <h2>3. Third-party services</h2>
-      <p>
-        The Client communicates with the following external services, controlled by their respective
-        operators under their own privacy policies.
-      </p>
+      <h2>4. What our entitlement / billing data looks like</h2>
+      <p>When you obtain Lifetime Beta Access or a cosmetic, we record:</p>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Source</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Discord user ID</td><td>Discord OAuth</td><td>Match the entitlement to your account</td></tr>
+          <tr><td>Storefront order reference</td><td>BOOTH / Gumroad / future</td><td>Audit trail, refund verification</td></tr>
+          <tr><td>SKU</td><td>Our catalogue</td><td>Identify what you bought</td></tr>
+          <tr><td>Granted-at timestamp</td><td>Server clock</td><td>Audit trail</td></tr>
+          <tr><td>Optional <code>expires_at</code></td><td>Subscription endpoint</td><td>Subscription cycle (if applicable)</td></tr>
+        </tbody>
+      </table>
+      <p>We do <strong>not</strong> record, and never see:</p>
       <ul>
-        <li>
-          <strong>Microsoft authentication endpoints</strong> to sign in to your Xbox Live / Minecraft
-          account. We never see your Microsoft password.
-        </li>
-        <li>
-          <strong>Minecraft session and profile APIs</strong> (<code>sessionserver.mojang.com</code>,
-          <code>api.minecraftservices.com</code>) to authenticate server joins.
-        </li>
-        <li>
-          <strong>Minecraft servers you connect to.</strong> These see your IP address, username,
-          UUID, and in-game actions. This is the same as vanilla Minecraft.
-        </li>
+        <li>Your full name (unless you happen to give it to us in a support ticket).</li>
+        <li>Your email address (unless you contact us with it).</li>
+        <li>Your billing address.</li>
+        <li>Your credit card number, bank account, or any other payment instrument detail. The
+          storefront you purchased from holds those; for them, see their own privacy policy.</li>
       </ul>
 
-      <h2>4. Data we collect on our side</h2>
-      <p>
-        <strong>Beta participation:</strong> To grant beta access, we associate your Discord ID with
-        an invite record. We may also store your Minecraft username / UUID when you receive a build
-        so we can recognize it in crash reports you voluntarily share.
-      </p>
-      <p>
-        <strong>No gameplay telemetry.</strong> The Client does not send tick-level, position, or
-        session data to us.
-      </p>
-      <p>
-        <strong>No analytics tracking on this website</strong> at the time of writing. If that changes
-        (e.g., for basic privacy-respecting page counts), this policy will be updated.
-      </p>
-      <p>
-        <strong>Voluntary crash reports.</strong> If the Client crashes, it may produce a local log
-        file. You decide whether to share it in the Discord. We do not auto-upload anything.
-      </p>
+      <h2>5. Storefronts and other third parties we route data through</h2>
+      <table>
+        <thead>
+          <tr><th>Service</th><th>Receives</th><th>Lives at</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Discord</td><td>OAuth identification + role lookups</td><td><a href="https://discord.com/privacy" target="_blank" rel="noopener">discord.com/privacy</a></td></tr>
+          <tr><td>BOOTH (PIXIV Inc.)</td><td>Payment for Lifetime Beta Access / cosmetics</td><td><a href="https://booth.pm/privacy" target="_blank" rel="noopener">booth.pm/privacy</a></td></tr>
+          <tr><td>Gumroad</td><td>Payment for Lifetime Beta Access / cosmetics</td><td><a href="https://gumroad.com/privacy" target="_blank" rel="noopener">gumroad.com/privacy</a></td></tr>
+          <tr><td>Sentry</td><td>Crash events (only if <code>SENTRY_DSN</code> is set)</td><td><a href="https://sentry.io/privacy" target="_blank" rel="noopener">sentry.io/privacy</a></td></tr>
+          <tr><td>Microsoft</td><td>Game account authentication</td><td><a href="https://privacy.microsoft.com/" target="_blank" rel="noopener">privacy.microsoft.com</a></td></tr>
+        </tbody>
+      </table>
 
-      <h2>5. Cookies</h2>
+      <h2>6. What our crash reporter collects</h2>
       <p>
-        This website does not use cookies.
+        If <code>SENTRY_DSN</code> is configured at the time the client is built or run, the
+        Sentry SDK sends crash events to a Sentry instance under our control. Each event contains:
       </p>
-
-      <h2>6. Data retention</h2>
-      <p>
-        Local data on your computer stays until you delete the Client's config folder or uninstall.
-        Discord-side beta records are retained while the beta program is active and may be purged
-        at public release.
-      </p>
-
-      <h2>7. Your choices</h2>
       <ul>
-        <li>
-          <strong>Sign out / delete local tokens</strong>: sign out in the launcher, or delete
-          <code>auth.json</code>.
-        </li>
-        <li>
-          <strong>Leave beta</strong>: leave the Discord. Your beta record will be removed on request.
-        </li>
-        <li>
-          <strong>Data deletion requests</strong>: ask in Discord (DM an admin) or via any email
-          address we announce later.
-        </li>
+        <li>A stack trace.</li>
+        <li>The Rust panic message, with credential-shaped substrings (<code>token</code>,
+          <code>hwid</code>, <code>Authorization</code>, <code>Bearer …</code>,
+          <code>password</code>, <code>secret</code>, and any path containing <code>/users/</code>
+          or <code>\users\</code>) replaced with <code>[redacted]</code> before transmission.</li>
+        <li>Operating system, Rust version, and Blue Public release version.</li>
+      </ul>
+      <p>
+        Sentry's "default PII" feature is <strong>disabled</strong>. Username, server name, and
+        IP address are stripped from each event before sending.
+      </p>
+      <p>
+        If you do not want crash data sent, do not run a build configured with a
+        <code>SENTRY_DSN</code>. The client functions normally without it.
+      </p>
+
+      <h2>7. What our auto-updater collects</h2>
+      <p>
+        The auto-updater issues an HTTPS request to our licence-authority service to fetch the
+        release manifest. The request itself is logged at the licence service in the same
+        access-log line as a licence call (IP address, timestamp, user-agent). No additional
+        information is collected by the updater.
+      </p>
+
+      <h2>8. Data retention</h2>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Retention</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Hardware fingerprint hash + tokens</td><td>Until your token expires + 24 hours (audit), then deleted</td></tr>
+          <tr><td>Rate-limit / IP attempt counters</td><td>5 minutes (in-memory, lost on restart)</td></tr>
+          <tr><td>Crash events (Sentry)</td><td>90 days, default Sentry retention</td></tr>
+          <tr><td>Local game logs (your machine)</td><td>14 days, rotated automatically</td></tr>
+          <tr><td>Local settings + acceptance record</td><td>Until you uninstall</td></tr>
+          <tr><td>Entitlement records (paid tiers, cosmetics)</td><td>While the entitlement is in force, plus seven (7) years after the last related transaction — required by the Japanese Companies Act and Income Tax Act for tax-record retention</td></tr>
+          <tr><td>Purchase audit references</td><td>Same seven-year retention as above</td></tr>
+        </tbody>
+      </table>
+
+      <h2>9. Where the data goes</h2>
+      <ul>
+        <li>The licence service runs on a single VPS we operate. Data does not leave that VPS
+          except in encrypted backups under our control.</li>
+        <li>Sentry crash events go to the Sentry instance configured at build time.</li>
+        <li>Storefront purchase data sits at the storefront (BOOTH or Gumroad). We receive a
+          webhook with the order reference and the buyer's Discord identifier; we do not pull
+          additional fields from the storefront unless required to verify a refund.</li>
+        <li>We do <strong>not</strong> sell or share your data with advertisers, data brokers, or
+          any third party for marketing purposes.</li>
       </ul>
 
-      <h2>8. Children</h2>
+      <h2>10. Your rights</h2>
+      <p>Wherever applicable law gives you the right to:</p>
+      <ul>
+        <li>Ask what data we hold about you.</li>
+        <li>Ask us to correct it.</li>
+        <li>Ask us to delete it.</li>
+        <li>Withdraw consent for any processing that requires consent.</li>
+        <li>Receive a portable export.</li>
+      </ul>
       <p>
-        This beta is intended for users who can agree to Minecraft's own age requirements on their
-        own account. We don't knowingly maintain beta records for users under the applicable age of
-        consent in their country.
+        …you can exercise those rights by contacting us through the channels in section 1. For
+        deletion requests we need the user identifier the licence service issued to you (visible
+        in the client during authentication).
+      </p>
+      <p>
+        <strong>Tax-record exception.</strong> Where you have purchased a paid tier or cosmetic,
+        we are required by Japanese law (Companies Act art. 432; Income Tax Act art. 232) to
+        retain the transaction record for <strong>seven years</strong> after the end of the
+        fiscal year in which the transaction occurred. During that period we cannot delete the
+        entitlement and order-reference rows even on request, but we will redact identifying
+        fields (Discord user ID, IP) where the law allows.
+      </p>
+      <p>For deletion of all other data we will act within 30 days.</p>
+
+      <h2>11. Security</h2>
+      <p>
+        We use TLS for all data in transit. The licence service stores data in a SQLite database
+        on disk; the JWT signing secret is held in an environment file with restricted
+        file-system permissions. Our threat model assumes that anyone with shell access to the
+        VPS can read everything, so we do not store anything we would not want a system
+        administrator to see.
       </p>
 
-      <h2>9. Security</h2>
+      <h2>12. Children</h2>
       <p>
-        We do our best, but no software is perfectly secure. Keep your computer and Minecraft
-        account credentials safe. If you suspect your <code>auth.json</code> was exposed, sign out
-        and revoke sessions from your Microsoft account settings.
+        The Software is not directed at children under 13. We do not knowingly collect data from
+        anyone under 13. If you believe we have, contact us — we will delete it (subject to the
+        tax-record exception in section 10 if the child made a purchase, in which case we will
+        refund the purchase).
       </p>
 
-      <h2>10. Changes</h2>
+      <h2>13. Changes to this policy</h2>
       <p>
-        This policy may change as the project evolves. Material changes will be announced in the
-        Discord. The "Effective" date at the top reflects the current version.
+        Material changes are signalled by bumping the version stamp at the top of this document.
+        The client will re-prompt you to accept the new version before continuing.
       </p>
 
-      <h2>11. Contact</h2>
+      <h2>14. Complaints</h2>
       <p>
-        Questions about this policy go in the
-        <a href="https://discord.gg/HwTm5Jbj" target="_blank" rel="noopener">Discord</a>.
+        If you believe we have mishandled your data, please contact us first so we can fix it.
+        You retain the right to lodge a complaint with the data-protection authority in your
+        jurisdiction (in Japan, this is the Personal Information Protection Commission,
+        <a href="https://www.ppc.go.jp/en/" target="_blank" rel="noopener">ppc.go.jp/en</a>).
       </p>
     </div>
   </div>
@@ -175,7 +281,7 @@
       <a href="faq.html">FAQ</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
-      <a href="https://discord.gg/HwTm5Jbj" target="_blank" rel="noopener">Discord</a>
+      <a href="https://discord.gg/uE3G4r2VE8" target="_blank" rel="noopener">Discord</a>
     </div>
     <p class="footer-disclaimer">
       Not affiliated with, endorsed by, or associated with Mojang Studios or Microsoft.
