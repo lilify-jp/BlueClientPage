@@ -34,7 +34,7 @@
 
     <div class="doc-body">
       <div class="callout">
-        <strong>Before you ask —</strong> Blue Client is in <strong>private beta</strong>.
+        <strong>Before you ask —</strong> Blue Client is in <strong>free public beta</strong>.
         Many features are still being built and some things don't work yet.
         For anything not covered here, join the
         <a href="https://discord.gg/Rv839W6XQ9" target="_blank" rel="noopener">Discord</a>.
@@ -65,8 +65,9 @@
       <div class="faq-item">
         <h3>Is it free?</h3>
         <p>
-          The beta is free for invited testers. Pricing for the public release hasn't been decided.
-          If that changes, it'll be announced in the Discord first.
+          Yes, the beta is completely free for everyone. Some features may become paid in the
+          future, but if that happens it'll be opt-in and announced in the Discord first — anything
+          you can already use for free stays free.
         </p>
       </div>
 
@@ -90,15 +91,16 @@
         <h3>How do I get beta access?</h3>
         <p>
           Join the <a href="https://discord.gg/Rv839W6XQ9" target="_blank" rel="noopener">Discord</a>
-          and follow the access instructions there. Invites are handled manually while the beta is small.
+          — downloads are posted there for anyone to grab, no invite needed.
         </p>
       </div>
 
       <div class="faq-item">
         <h3>Can I share the build with friends?</h3>
         <p>
-          No. Beta builds are invite-only and not for redistribution. If a friend is interested,
-          send them to the Discord.
+          Please point them to the Discord instead of passing the file around directly — that way
+          they get the current build, checksums, and the known-issues list, and we can reach them
+          if something changes.
         </p>
       </div>
 
@@ -133,15 +135,15 @@
       <div class="faq-item">
         <h3>Does it run on macOS / Linux?</h3>
         <p>
-          The engine targets Windows, macOS, and Linux. During beta we're prioritizing Windows
-          because that's where most testers are. Other platforms are built but tested less often.
+          Windows and Linux builds are available now. macOS isn't supported yet — it's a possible
+          future target, not something we currently build or test.
         </p>
       </div>
 
       <div class="faq-item">
         <h3>System requirements?</h3>
         <p>
-          Lower than Java clients in most cases. A GPU that supports Vulkan / Metal / DX12
+          Lower than Java clients in most cases. A GPU that supports Vulkan or DX12
           (any laptop from the last ~8 years) and roughly 1&nbsp;GB of RAM available. No exact numbers yet.
         </p>
       </div>
@@ -157,8 +159,9 @@
       <div class="faq-item">
         <h3>Does it support single-player / LAN?</h3>
         <p>
-          No. There's no world generation and no integrated server. Blue Client is multiplayer-only.
-          This is a scope decision, not a bug.
+          Yes. Single-player boots a local PaperSpigot 1.8.8 server in the background (Java 8 is
+          auto-downloaded if you don't have it) and connects to it over localhost — there's no
+          built-in world generator or integrated server of its own. LAN play isn't supported yet.
         </p>
       </div>
 
@@ -202,15 +205,18 @@
       <div class="faq-item">
         <h3>I found a bug. Where do I report it?</h3>
         <p>
-          The #bugs (or equivalent) channel in the Discord. Include: what you were doing, what happened,
-          the server you were on, and the build version. Screenshots / video help a lot.
+          Use the <code>/bug</code> command in #bug-report on the Discord — it opens a private
+          thread just for you and the moderators. Include what you were doing, what happened, the
+          server you were on, and the build version, and attach the crash log if the client crashed
+          (saved to <code>~/.blue/crashes/</code>). Screenshots / video help a lot.
         </p>
       </div>
 
       <div class="faq-item">
-        <h3>When will 1.0 / public release happen?</h3>
+        <h3>When will 1.0 / a stable release happen?</h3>
         <p>
-          No ETA. We'd rather ship when it's actually stable than promise a date.
+          No ETA. The free public beta is out now, but a polished 1.0 is a ways off — we'd rather
+          ship when it's actually stable than promise a date.
         </p>
       </div>
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Blue Client — a Minecraft 1.8.9 PvP client written in Rust. Early development." />
+<meta name="description" content="Blue Client — a Minecraft 1.8.9 PvP client written in Rust. Free public beta." />
 <title>Blue Client — Minecraft 1.8.9 PvP client in Rust</title>
 <link rel="stylesheet" href="style.css" />
 </head>
@@ -28,7 +28,7 @@
   <div class="hero-inner">
     <div class="badge">
       <span class="badge-dot"></span>
-      Private Beta · Invite only
+      Free Public Beta
     </div>
     <h1 class="hero-title">
       A Minecraft 1.8 PvP client,<br/>
@@ -42,7 +42,7 @@
       <a href="#features" class="btn btn-ghost">See what works →</a>
     </div>
     <p class="hero-note">
-      Windows · macOS · Linux &nbsp;·&nbsp; Minecraft 1.8.9 (protocol 47) &nbsp;·&nbsp; Multiplayer only
+      Windows · Linux &nbsp;·&nbsp; Minecraft 1.8.9 (protocol 47)
     </p>
   </div>
   <div class="hero-bg"></div>
@@ -50,7 +50,7 @@
 
 <section class="status-banner">
   <div class="status-inner">
-    <strong>Private Beta —</strong> this client is in closed testing. Access is invite-only while we stabilize the core. Many features are planned but not yet built. If you're looking for a polished, feature-complete client today, come back later.
+    <strong>Free Public Beta —</strong> anyone can join the Discord and download it. Many features are planned but not yet built, and there are known bugs (see below). If you're looking for a polished, feature-complete client today, come back later.
   </div>
 </section>
 
@@ -78,8 +78,8 @@
         <p>No JVM. Rust + wgpu rendering, tokio networking. Faster boot, lower RAM than Java clients.</p>
       </div>
       <div class="feature-card">
-        <h3>Custom launcher</h3>
-        <p>Tauri-based cross-platform launcher. Account management and version selection.</p>
+        <h3>Single-player</h3>
+        <p>Boots a local PaperSpigot 1.8.8 server in the background (Java 8 auto-downloaded if needed) and connects over localhost.</p>
       </div>
       <div class="feature-card">
         <h3>HUD editor</h3>
@@ -109,7 +109,7 @@
       <span class="chip">Scoreboard</span>
     </div>
     <p class="progress-note">
-      ~120 of ~150 planned mods. Many are basic HUD widgets.
+      137 mods implemented so far. Many are basic HUD widgets.
     </p>
   </div>
 </section>
@@ -152,6 +152,7 @@
       <div class="roadmap-col">
         <h3>Misc</h3>
         <ul>
+          <li>Standalone launcher (account/version management)</li>
           <li>Replay mod</li>
           <li>Friends / Party</li>
           <li>Custom keybind editor</li>
@@ -177,7 +178,7 @@
           is everything has to be reimplemented one method at a time.
         </p>
         <p>
-          That's why the beta is closed. Each feature that ships is native, not emulated.
+          Each feature that ships is native, not emulated — nothing here is emulating Forge/Fabric APIs.
         </p>
       </div>
       <div class="split-visual">
@@ -185,7 +186,6 @@
           <div class="tech-row"><span>Rendering</span><span class="tech-tag">wgpu</span></div>
           <div class="tech-row"><span>Networking</span><span class="tech-tag">tokio</span></div>
           <div class="tech-row"><span>Physics</span><span class="tech-tag">Vanilla 1.8 (translated)</span></div>
-          <div class="tech-row"><span>Launcher</span><span class="tech-tag">Tauri</span></div>
           <div class="tech-row"><span>Protocol</span><span class="tech-tag">47 (1.8.9)</span></div>
           <div class="tech-row"><span>Runtime</span><span class="tech-tag">Native · no JVM</span></div>
         </div>
@@ -222,10 +222,12 @@
       <div class="issue">
         <div class="issue-tag issue-tag-info">Scope</div>
         <div>
-          <h4>Multiplayer only</h4>
+          <h4>Single-player runs a local PaperSpigot server</h4>
           <p>
-            No world generation, no integrated server, no save files. The client is aimed at
-            servers — single-player support is a possible future direction, not a near-term goal.
+            Blue Client doesn't have its own integrated server or world generator — single-player
+            works by launching a local PaperSpigot 1.8.8 server in the background (auto-downloading
+            a bundled Java 8 runtime if needed) and connecting to it over localhost. Saves live
+            under <code>~/.blue/saves/</code>.
           </p>
         </div>
       </div>
@@ -236,7 +238,7 @@
           <h4>Rendering gaps</h4>
           <p>
             A few visuals remain placeholder or missing: water flow direction, sign text,
-            banner patterns, piston animation, a handful of entity models. Functional but rough.
+            banner patterns, piston animation. Functional but rough.
           </p>
         </div>
       </div>
@@ -251,8 +253,8 @@
       <div class="cta-single-icon">◆</div>
       <h2>Everything happens on Discord</h2>
       <p class="cta-sub">
-        Beta invites, builds, updates, support, feedback — all in one place.
-        Join us to request access and follow development.
+        Downloads, updates, support, feedback — all in one place.
+        Join us to grab the client and follow development.
       </p>
       <a href="https://discord.gg/Rv839W6XQ9" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Join the Discord</a>
       <p class="cta-hint">discord.gg/Rv839W6XQ9</p>
